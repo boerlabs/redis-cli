@@ -1,6 +1,6 @@
 A pure Go Redis-cli 
 ==================
-[![Go Report Card](https://goreportcard.com/badge/github.com/holys/redis-cli)](https://goreportcard.com/report/github.com/holys/redis-cli)
+[![Go Report Card](https://goreportcard.com/badge/github.com/boerlabs/redis-cli)](https://goreportcard.com/report/github.com/boerlabs/redis-cli)
 
 This is a simple redis-cli forked from [https://github.com/siddontang/ledisdb(ledis-cli)](https://github.com/siddontang/ledisdb).
 Fully compatible with [Redis Protocol specification](https://redis.io/topics/protocol).
@@ -21,10 +21,10 @@ Fully compatible with [Redis Protocol specification](https://redis.io/topics/pro
 
 To install, use `go get`
 ```
-go get -u -v github.com/holys/redis-cli 
+go get -u -v github.com/boerlabs/redis-cli 
 ```
 
-or download binary file from [release](https://github.com/holys/redis-cli/releases).
+or download binary file from [release](https://github.com/boerlabs/redis-cli/releases).
 
 ### Usage
 
