@@ -1,0 +1,49 @@
+# GoReleaser config — see https://goreleaser.com
+# Produces two Linux binaries (amd64 + arm64), packs them as tar.gz, and
+# publishes a GitHub Release with checksums + an auto-generated changelog.
+version: 2
+
+project_name: redis-cli
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: redis-cli
+    main: .
+    binary: redis-cli
+    env:
+      # Pure-Go build: no C toolchain needed, so cross-compiling to arm64
+      # works out of the box on the amd64 runner.
+      - CGO_ENABLED=0
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    # -s -w strips the symbol/DWARF tables for a smaller binary.
+    ldflags:
+      - -s -w
+
+archives:
+  - formats:
+      - tar.gz
+    # e.g. redis-cli_1.2.3_linux_amd64.tar.gz
+    name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
+
+checksum:
+  name_template: '{{ .ProjectName }}_{{ .Version }}_checksums.txt'
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+      - '^chore:'
+
+release:
+  draft: false
+  # rc/beta/alpha tags are auto-marked as prerelease.
+  prerelease: auto
