@@ -1,0 +1,21 @@
+# github.com/alicebob/gopher-json v0.0.0-20230218143504-906a9b012302
+## explicit
+# github.com/alicebob/miniredis v2.5.0+incompatible
+## explicit
+# github.com/gomodule/redigo v1.9.3
+## explicit; go 1.17
+# github.com/holys/goredis v0.0.0-20170102023504-0190d3dd3e98
+## explicit
+github.com/holys/goredis
+# github.com/mattn/go-runewidth v0.0.3
+## explicit
+github.com/mattn/go-runewidth
+# github.com/peterh/liner v1.2.2
+## explicit
+github.com/peterh/liner
+# github.com/yuin/gopher-lua v1.1.2
+## explicit; go 1.23
+# golang.org/x/sys v0.0.0-20211117180635-dee7805ff2e1
+## explicit; go 1.17
+golang.org/x/sys/internal/unsafeheader
+golang.org/x/sys/unix
